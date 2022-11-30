@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Vendor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Vendors</h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table  table-striped">
+    <thead>
+        <tr>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.V_code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.V_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.V_contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.V_AreaCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.V_phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.V_state)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.V_order)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.V_code)
+            </td>
+            <td>
+                <span style="cursor: pointer"
+                      data-bs-toggle="modal" 
+                      data-bs-target="#exampleModal"
+                      onclick="showProducts('@item.V_code', '@item.V_name')"
+                >
+                    @Html.DisplayFor(modelItem => item.V_name)
+                </span>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.V_contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.V_AreaCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.V_phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.V_state)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.V_order)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.V_code }) |
+                @Html.ActionLink("Details", "Details", new { id=item.V_code }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.V_code })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showProducts(id, name) {
+
+        $('#exampleModalLabel').html(name);
+
+        const url = "@Url.Action("GetProductsByVendorId", "Products")/" + id;
+
+        $.get(url, function(data) {
+            $('.modal-body').html(data);
+        });
+
+    }
+</script>

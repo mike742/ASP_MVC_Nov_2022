@@ -1,0 +1,61 @@
+﻿@model ASP_MVC_Nov_2022.Models.Vendor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Edit Vendor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="V_code" class="control-label"></label>
+                <input asp-for="V_code" class="form-control" disabled />
+                <span asp-validation-for="V_code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="V_name" class="control-label"></label>
+                <input asp-for="V_name" class="form-control" />
+                <span asp-validation-for="V_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="V_contact" class="control-label"></label>
+                <input asp-for="V_contact" class="form-control" />
+                <span asp-validation-for="V_contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="V_AreaCode" class="control-label"></label>
+                <input asp-for="V_AreaCode" class="form-control" />
+                <span asp-validation-for="V_AreaCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="V_phone" class="control-label"></label>
+                <input asp-for="V_phone" class="form-control" />
+                <span asp-validation-for="V_phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="V_state" class="control-label"></label>
+                <input asp-for="V_state" class="form-control" />
+                <span asp-validation-for="V_state" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="V_order" class="control-label"></label>
+                <input asp-for="V_order" class="form-control" />
+                <span asp-validation-for="V_order" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
