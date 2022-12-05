@@ -1,5 +1,6 @@
 ﻿using ASP_MVC_Nov_2022.Models;
 using ASP_MVC_Nov_2022.Repos;
+using ASP_MVC_Nov_2022.Repos.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,7 +8,14 @@ namespace ASP_MVC_Nov_2022.Controllers
 {
     public class VendorsController : Controller
     {
-        private readonly MockVendorRepo _vendorRepo = new MockVendorRepo();
+        private readonly IVendorRepo _vendorRepo;
+        // private readonly MockVendorRepo _vendorRepo = new MockVendorRepo();
+
+        public VendorsController(IVendorRepo vendorRepo)
+        {
+            _vendorRepo = vendorRepo;
+        }
+
 
         // GET: VendorsController
         public ActionResult<IEnumerable<Vendor>> Index()

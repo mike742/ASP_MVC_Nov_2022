@@ -1,8 +1,9 @@
 ﻿using ASP_MVC_Nov_2022.Models;
+using ASP_MVC_Nov_2022.Repos.Interfaces;
 
 namespace ASP_MVC_Nov_2022.Repos
 {
-    public class MockVendorRepo
+    public class MockVendorRepo : IVendorRepo
     {
         private static List<Vendor> vendors = new List<Vendor>
         {

@@ -1,7 +1,19 @@
+using ASP_MVC_Nov_2022.Repos;
+using ASP_MVC_Nov_2022.Repos.Interfaces;
+using ASP_MVC_Nov_2022.Repos.MySqlRepos;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AppDbContext>(op => {
+    var cs = builder.Configuration.GetConnectionString("Default");
+    op.UseMySql(cs, ServerVersion.AutoDetect(cs));
+});
+
+builder.Services.AddScoped<IVendorRepo, MySqlVendorRepo>();
 
 var app = builder.Build();
 
