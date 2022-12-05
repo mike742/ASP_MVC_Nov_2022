@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(op => {
     op.UseMySql(cs, ServerVersion.AutoDetect(cs));
 });
 builder.Services.AddScoped<IProductRepo, MySqlProductRepo>();
+builder.Services.AddScoped<IOrderRepo, MySqlOrderRepo>();
 
 var app = builder.Build();
 

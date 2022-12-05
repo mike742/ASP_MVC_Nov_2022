@@ -31,5 +31,24 @@ namespace RestAPI_Nov2022.Data
                 Price = input.Price
             };
         }
+
+        public OrderReadDto Map(Order input)
+        {
+            return new OrderReadDto {
+                Id = input.Id,
+                Name = input.Name,
+                Date = input.Date,
+                Products = new List<ProductReadDto>()
+            };
+        }
+
+        public Order Map(OrderCreateDto input)
+        {
+            return new Order
+            {
+                Date = input.Date,
+                Name = input.Name
+            };
+        }
     }
 }
