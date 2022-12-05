@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP_MVC_Nov_2022", "ASP_MVC_Nov_2022\ASP_MVC_Nov_2022.csproj", "{91B209E7-2421-4353-8F97-4C1B3AC0D65A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP_MVC_Nov_2022", "ASP_MVC_Nov_2022\ASP_MVC_Nov_2022.csproj", "{91B209E7-2421-4353-8F97-4C1B3AC0D65A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI_Nov2022", "RestAPI_Nov2022\RestAPI_Nov2022.csproj", "{6F92C7BB-C0A3-445F-8D71-F1AD8772ABA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{91B209E7-2421-4353-8F97-4C1B3AC0D65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91B209E7-2421-4353-8F97-4C1B3AC0D65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91B209E7-2421-4353-8F97-4C1B3AC0D65A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F92C7BB-C0A3-445F-8D71-F1AD8772ABA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F92C7BB-C0A3-445F-8D71-F1AD8772ABA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F92C7BB-C0A3-445F-8D71-F1AD8772ABA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F92C7BB-C0A3-445F-8D71-F1AD8772ABA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
